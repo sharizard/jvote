@@ -1,5 +1,5 @@
-import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const app = initializeApp({
@@ -10,9 +10,9 @@ const app = initializeApp({
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-})
+});
 
-const auth = getAuth()
+const auth = getAuth();
 const db = getFirestore(app);
 
-export { app, auth, db }
+export { app, auth, db };

@@ -66,7 +66,7 @@ function Login() {
   return (
     <div className="flex justify-center">
       <form
-        className="shadow-xl mt-32 p-10 text-gray-700 rounded-lg px-8 pt-6 pb-8 mb-4"
+        className="flex flex-col items-center shadow-xl mt-32 p-10 text-gray-700 rounded-lg px-8 pt-6 pb-8 mb-4"
         onSubmit={loginIn}
       >
         <div className="mb-4">

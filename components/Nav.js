@@ -34,6 +34,9 @@ function Nav() {
             <Link href="/chat">Chat</Link>
           </li>
           <li>
+            <Link href="/vote">Stem</Link>
+          </li>
+          <li>
             <Button onClick={signOut}>Logg ut</Button>
           </li>
         </ul>
