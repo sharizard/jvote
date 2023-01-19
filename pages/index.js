@@ -29,7 +29,7 @@ export default function Home() {
         {loading && <h1 className="text-white text-4xl">Loading...</h1>}
         {user && (
           <div className="flex flex-col space-y-20">
-            <h1 className="text-8xl text-fuchsia-300 text-center">
+            <h1 className="text-4xl sm:text-8xl text-fuchsia-300 text-center">
               Hei {name} 👊
             </h1>
             <Vote />
