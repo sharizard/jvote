@@ -21,10 +21,8 @@ function Login() {
     try {
       setError(false);
       setLoading(true);
-      const result = await signInWithPopup(auth, googleProvider);
-      if (result) {
-        router.push("/");
-      }
+      await signInWithPopup(auth, googleProvider);
+      router.push("/");
     } catch (err) {
       console.error(err);
       setLoading(false);
@@ -56,12 +54,9 @@ function Login() {
     [email, password, router]
   );
 
-  const submitHandler = () => {
-    if (!email || !password) {
-      setError("Skriv inn e-post og passord");
-      return;
-    }
-  };
+  if (loading) {
+    return "Loading...";
+  }
 
   return (
     <div className="flex justify-center">
@@ -71,7 +66,7 @@ function Login() {
       >
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-fuchsia-100 text-sm font-bold mb-2"
             htmlFor="email"
           >
             E-post
@@ -87,7 +82,7 @@ function Login() {
         </div>
         <div className={`${error ? "" : "mb-6"}`}>
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-fuchsia-100 text-sm font-bold mb-2"
             htmlFor="password"
           >
             Passord
@@ -101,12 +96,12 @@ function Login() {
             placeholder="******************"
           />
         </div>
-        {error && <p className="text-red-700 mb-8">{error}</p>}
+        {error && <p className="text-red-500 mb-8">{error}</p>}
         <div className="flex flex-col items-center justify-between gap-4">
-          <Button type="submit" onClick={submitHandler}>
+          <Button disabled={loading} type="submit">
             Logg inn
           </Button>
-          <Button onClick={googleSignUp}>
+          <Button onClick={googleSignUp} disabled={loading}>
             <FcGoogle className="text-1xl" />
             Logg inn med Google
           </Button>

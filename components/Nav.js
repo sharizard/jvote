@@ -13,14 +13,16 @@ function Nav() {
     router.push("/login");
   };
   return (
-    <nav className="flex justify-between items-center py-4 px-10 border-b border-solid border-gray-700 ">
-      <Link href="/" className="text-3xl sm:text-4xl text-cyan-700">
+    <nav className="flex justify-between items-center py-4 px-10 border-b border-solid border-fuchsia-100 ">
+      <Link href="/" className="text-6xl sm:text-4xl text-fuchsia-300">
         jChat
       </Link>
       {!user ? (
         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
           <li>
-            <Link href="/login">Logg inn</Link>
+            <Link className="text-fuchsia-100" href="/login">
+              Logg inn
+            </Link>
           </li>
           <li>
             <Button onClick={() => router.push("/sign-up")}>
@@ -30,12 +32,6 @@ function Nav() {
         </ul>
       ) : (
         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-          <li>
-            <Link href="/chat">Chat</Link>
-          </li>
-          <li>
-            <Link href="/vote">Stem</Link>
-          </li>
           <li>
             <Button onClick={signOut}>Logg ut</Button>
           </li>
