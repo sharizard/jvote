@@ -11,12 +11,12 @@ function Message({ message }) {
   }`;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-2">
       <div className={className}>
         <div
           className={`p-3 rounded-2xl  ${
             isMessageFromUser
-              ? "bg-green-400 text-green-900 rounded-tr-none"
+              ? "bg-green-200 text-green-900 rounded-tr-none"
               : "bg-slate-200 rounded-tr-none"
           }`}
         >
@@ -24,7 +24,7 @@ function Message({ message }) {
         </div>
       </div>
       <p className={`${className} text-xs text-gray-400`}>
-        {message.userUid} - {message.timestamp?.toDate()?.toLocaleString("no-NO")}
+        {message.timestamp?.toDate()?.toLocaleString("no-NO")}
       </p>
     </div>
   );

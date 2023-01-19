@@ -33,6 +33,11 @@ function Nav() {
       ) : (
         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
           <li>
+            <Link className="text-fuchsia-100" href="/chat">
+              Chat
+            </Link>
+          </li>
+          <li>
             <Button onClick={signOut}>Logg ut</Button>
           </li>
         </ul>
